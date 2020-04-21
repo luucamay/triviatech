@@ -6,3 +6,8 @@ This is a trivia app to test tech knowledge
 
 ## Learned things
 - Create a loading bar with css https://css-tricks.com/css3-progress-bars/
+
+## TO DO list
+- Work with loading bar
+- Remove alert on loging
+- 
