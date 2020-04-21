@@ -1,0 +1,16 @@
+h1 {
+  font-family: "Open Sans", sans-serif;
+}
+.hide {
+    display: none;
+}
+.topics {
+    display: block;
+    background-color: cadetblue;
+    padding: 1em;
+    margin: 0.25em;
+}
+.topics > p {
+    display: inline;
+
+}
