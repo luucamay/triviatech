@@ -1,4 +1,5 @@
-<!DOCTYPE html <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -6,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <link rel='stylesheet' href='bar_style.css'>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+  <link rel='stylesheet' href='radio_button.css'>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
   <title>Trivia Tech</title>
 </head>
@@ -14,7 +16,7 @@
 <body>
   <div id="root">
     <!--- Login View -->
-    <section class="" id="loginView">
+    <section class="hide" id="loginView">
       <h1>Trivia Tech</h1>
       <input type="text" id="name" name="name" placeholder="Enter your name..." required><br><br>
       <button id="loginBtn">Sign in</button>
@@ -42,6 +44,50 @@
       <div class="topics">
         <p>JS</p>
         <button id="playJs">play</button>
+      </div>
+    </section>
+    <!-- Questions View -->
+    <section id="questionsView" class="">
+      <header>
+        <h1 id="topic">html</h1>
+        <div id="goalBox">
+          <h2>Goal</h2>
+          <h2>0/10</h2>
+        </div>
+        <h2>
+          3 sec
+        </h2>
+      </header>
+      <div>
+        <h3 id="question" class="card-question">What is not HTML?</h3>
+        <ul>
+          <li>
+            <input type="radio" id="1-option" name="answers">
+            <label for="1-option">Hypertext Markup Language</label>
+            <div class="check"></div>
+          </li>
+          <li>
+            <input type="radio" id="2-option" name="answers">
+            <label for="2-option">A Markup Language</label>
+            <div class="check">
+              <div class="inside"></div>
+            </div>
+          </li>
+          <li>
+            <input type="radio" id="3-option" name="answers">
+            <label for="3-option">A song</label>
+            <div class="check">
+              <div class="inside"></div>
+            </div>
+          </li>
+          <li>
+            <input type="radio" id="4-option" name="answers">
+            <label for="4-option">A way to define a document in the web</label>
+            <div class="check">
+              <div class="inside"></div>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
   </div>
