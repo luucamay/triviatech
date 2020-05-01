@@ -1,0 +1,34 @@
+h1 {
+  font-family: "Open Sans", sans-serif;
+}
+.hide {
+  display: none;
+}
+.topics {
+  display: block;
+  background-color: cadetblue;
+  margin: 0.25em;
+}
+.topics > p {
+  display: inline;
+}
+.question-header {
+  border: 1px solid blue;
+}
+.card-question {
+  display: flex;
+  flex-direction: column;
+  /*border: 1px solid red;*/
+}
+.card-question h1 {
+  font-size: 24px;
+}
+.answers {
+  border: 1px solid green;
+}
+.answer {
+  border: 1px solid whitesmoke;
+}
+.answer:hover {
+  background-color: hotpink;
+}
