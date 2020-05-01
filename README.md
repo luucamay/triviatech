@@ -1,6 +1,8 @@
-# triviatech
+# Trivia Tech
 
-This is a trivia app to test tech knowledge
+This is a trivia app to test tech knowledge on topics like JS and CSS.
+
+Play here: https://proyecto-trivia-luu.glitch.me/
 
 ## Preguntas para Lupo, Mariano, y Diego
 
@@ -9,6 +11,7 @@ This is a trivia app to test tech knowledge
 ## Learned things
 
 - Create a loading bar with css https://css-tricks.com/css3-progress-bars/
+- radio buttons only work with submit button?
 
 ## TO DO list
 
