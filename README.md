@@ -16,6 +16,7 @@ Play here: https://proyecto-trivia-luu.glitch.me/
 ## TO DO list
 
 - Remove alert on loging???
+- Reset all styling when set play again!
 - [x] Work with loading bar
 - [x] Mostrar una pantalla de bienvenida, pida tu nombre para comenzar a jugar.
 - [x] Mostrar un mensaje de Hola [tu nombre] y dos botones para comenzar a jugar.

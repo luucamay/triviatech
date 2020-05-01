@@ -58,6 +58,7 @@ let numRightAnswers = 0;
 
 const goHomeView = function() {
   numRightAnswers = 0;
+  numRightAnswersBox.innerHTML = `${numRightAnswers} /3`;
   winView.classList.add("hide");
   loseView.classList.add("hide");
   playAgain.classList.add("hide");
@@ -80,10 +81,15 @@ const login = function() {
 
 const openQuiz = function(questionSet) {
   homeView.classList.add("hide");
+  goalBox.classList.remove("hide");
   if (questionSet == "js") {
     questionsViewJ.classList.remove("hide");
+    answersBoxJS1.classList.remove("hide");
+    answersBoxJS1.classList.add("card-question");
   } else {
     questionsViewC.classList.remove("hide");
+    answersBoxCSS1.classList.remove("hide");
+    answersBoxCSS1.classList.add("card-question");
   }
 };
 
