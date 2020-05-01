@@ -1,128 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bar_style.css" />
+    <link rel="stylesheet" href="radio_button.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trivia Tech</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <link rel='stylesheet' href='bar_style.css'>
-  <link rel='stylesheet' href='radio_button.css'>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
-  <title>Trivia Tech</title>
-</head>
+  <body>
+    <div id="root">
+      <!--- Login View -->
+      <section class="hide" id="loginView">
+        <h1>Trivia Tech</h1>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name..."
+          required
+        /><br /><br />
+        <button id="loginBtn">Play</button>
+      </section>
+      <!-- Loading View -->
+      <section class="hide" id="loadingView">
+        <h1>Trivia Tech</h1>
+        <div class="meter">
+          <span style="width: 25%"></span>
+        </div>
+      </section>
+      <!-- Home View -->
+      <section class="hide" id="homeView">
+        <h2>Hi <span id="username"></span></h2>
+        <h2>Start playing!</h2>
+        <h3>Topics:</h3>
+        <div class="topics" id="playHtml">
+          JS
+        </div>
+        <div class="topics" id="playCss">
+          CSS
+        </div>
+      </section>
 
-<body>
-  <div id="root">
-    <!--- Login View -->
-    <section class="hide" id="loginView">
-      <h1>Trivia Tech</h1>
-      <input type="text" id="name" name="name" placeholder="Enter your name..." required><br><br>
-      <button id="loginBtn">Play</button>
-    </section>
-    <!-- Loading View -->
-    <section class="hide" id="loadingView">
-      <h1>Trivia Tech</h1>
-      <div class="meter">
-        <span style="width: 25%"></span>
+      <div id="goal-box">
+        <h2>Goal</h2>
+        <h2 id="num-right-ans">0/3</h2>
       </div>
-    </section>
-    <!-- Home View -->
-    <section class="hide" id="homeView">
-      <h2>Hi <span id="username"></span></h2>
-      <h2>Start playing!</h2>
-      <h3>Topics:</h3>
-      <div class="topics" id="playHtml">
-        JS
-      </div>
-      <div class="topics" id="playCss">
-        CSS
-      </div>
-    </section>
-
-    <div id="goal-box">
-      <h2>Goal</h2>
-      <h2 id="num-right-ans">0/3</h2>
+      <!-- Questions View JS -->
+      <section id="questionsViewJS" class="hide">
+        <header class="question-header">
+          <h1 id="topic">JS</h1>
+        </header>
+        <div class="card-question" id="answer-js-1">
+          <h1 id="question-js-1">
+            Which one is not an important paradigm for JavaScript developers?
+          </h1>
+          <div class="answers">
+            <div class="answer" id="answer-js-1-1">Prototypal inheritance</div>
+            <div class="answer" id="answer-js-1-2">Hello World Souffle</div>
+            <div class="answer" id="answer-js-1-3">Functional Programming</div>
+            <div class="answer" id="answer-js-1-4">Object Oriented</div>
+          </div>
+        </div>
+        <div class="hide" id="answer-js-2">
+          <h1 id="question-js-2">What is not Functional Programming?</h1>
+          <div class="answers">
+            <div class="answer" id="answer-js-2-1">
+              Does JS has functional programming?
+            </div>
+            <div class="answer" id="answer-js-2-2">Pure functions</div>
+            <div class="answer" id="answer-js-2-3">First Class Functions</div>
+            <div class="answer" id="answer-js-2-4">High Order Functions</div>
+          </div>
+        </div>
+        <div class="hide" id="answer-js-3">
+          <h1 id="question-js-3">
+            When is classical inheritance an appropriate choice?
+          </h1>
+          <div class="answers">
+            <div class="answer" id="answer-js-3-1">
+              Object composition is better than class inheritance
+            </div>
+            <div class="answer" id="answer-js-3-2">
+              Always! Most of the time!
+            </div>
+            <div class="answer" id="answer-js-3-3">
+              A single level is sometimes OK, from a framework base-class such
+              as React.Component
+            </div>
+            <div class="answer" id="answer-js-3-4">
+              Aren’t classes the right way to create objects in JavaScript?
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Questions View CSS -->
+      <section id="questionsViewCSS" class="">
+        <header class="question-header">
+          <h1 id="topic">CSS</h1>
+        </header>
+        <div class="card-question" id="answer-css-1">
+          <h1 id="question-css-1">
+            What elements will match the following CSS selectors: div + p
+          </h1>
+          <div class="answers">
+            <div class="answer" id="answer-css-1-1">
+              Selects all div elements and all p elements
+            </div>
+            <div class="answer" id="answer-css-1-2">
+              Selects all p elements that are anywhere inside a div element
+            </div>
+            <div class="answer" id="answer-css-1-3">
+              Selects all p elements where the immediate parent is a div element
+            </div>
+            <div class="answer" id="answer-css-1-4">
+              Selects all p elements that are placed immediately after a div
+              element
+            </div>
+          </div>
+        </div>
+        <div class="hide" id="answer-css-2">
+          <h1 id="question-css-2">
+            What is the meaning this CSS unit for expressing length: em
+          </h1>
+          <div class="answers">
+            <div class="answer" id="answer-css-2-1">centimeters</div>
+            <div class="answer" id="answer-css-2-2">elements</div>
+            <div class="answer" id="answer-css-2-3">inches</div>
+            <div class="answer" id="answer-css-2-4">millimeters</div>
+          </div>
+        </div>
+        <div class="hide" id="answer-css-3">
+          <h1 id="question-css-3">
+            How would you select: Every a element whose href attribute value
+            contains the substring “css”
+          </h1>
+          <div class="answers">
+            <div class="answer" id="answer-css-3-1">a[href^="https"]</div>
+            <div class="answer" id="answer-css-3-2">a[href$=".pdf"]</div>
+            <div class="answer" id="answer-css-3-3">a[href*="css"]</div>
+            <div class="answer" id="answer-css-3-4">a[href=*"css"]</div>
+          </div>
+        </div>
+      </section>
+      <!-- Win View -->
+      <section class="hide" id="win-view">
+        <h1>You Won!</h1>
+      </section>
+      <!-- Lose View -->
+      <section class="hide" id="lose-view">
+        <h1>Sorry, you lose, please study more!</h1>
+      </section>
+      <button id="play-again" class="hide">Play Again</button>
     </div>
-    <!-- Questions View JS -->
-    <section id="questionsViewJS" class="hide">
-      <header class="question-header">
-        <h1 id="topic">JS</h1>
-      </header>
-      <div class="card-question" id="answer-js-1">
-        <h1 id="question-js-1">Which one is not an important paradigm for JavaScript developers?</h1>
-        <div class="answers">
-          <div class="answer" id="answer-js-1-1">Prototypal inheritance</div>
-          <div class="answer" id="answer-js-1-2">Hello World Souffle</div>
-          <div class="answer" id="answer-js-1-3">Functional Programming</div>
-          <div class="answer" id="answer-js-1-4">Object Oriented</div>
-        </div>
-      </div>
-      <div class="hide" id="answer-js-2">
-        <h1 id="question-js-2">What is not Functional Programming?</h1>
-        <div class="answers">
-          <div class="answer" id="answer-js-2-1">Does JS has functional programming?</div>
-          <div class="answer" id="answer-js-2-2">Pure functions</div>
-          <div class="answer" id="answer-js-2-3">First Class Functions</div>
-          <div class="answer" id="answer-js-2-4">High Order Functions</div>
-        </div>
-      </div>
-      <div class="hide" id="answer-js-3">
-        <h1 id="question-js-3">When is classical inheritance an appropriate choice?</h1>
-        <div class="answers">
-          <div class="answer" id="answer-js-3-1">Object composition is better than class inheritance</div>
-          <div class="answer" id="answer-js-3-2">Always! Most of the time!</div>
-          <div class="answer" id="answer-js-3-3">A single level is sometimes OK, from a framework base-class such as
-            React.Component</div>
-          <div class="answer" id="answer-js-3-4">Aren’t classes the right way to create objects in JavaScript?</div>
-        </div>
-      </div>
-    </section>
-    <!-- Questions View CSS -->
-    <section id="questionsViewCSS" class="">
-      <header class="question-header">
-        <h1 id="topic">CSS</h1>
-      </header>
-      <div class="card-question" id="answer-css-1">
-        <h1 id="question-css-1">What elements will match the following CSS selectors: div + p</h1>
-        <div class="answers">
-          <div class="answer" id="answer-css-1-1">Selects all div elements and all p elements</div>
-          <div class="answer" id="answer-css-1-2">Selects all p elements that are anywhere inside a div element</div>
-          <div class="answer" id="answer-css-1-3">Selects all p elements where the immediate parent is a div element</div>
-          <div class="answer" id="answer-css-1-4">Selects all p elements that are placed immediately after a div element</div>
-        </div>
-      </div>
-      <div class="hide" id="answer-css-2">
-        <h1 id="question-css-2">What is the meaning this CSS unit for expressing length: em</h1>
-        <div class="answers">
-          <div class="answer" id="answer-css-2-1">centimeters</div>
-          <div class="answer" id="answer-css-2-2">elements </div>
-          <div class="answer" id="answer-css-2-3">inches</div>
-          <div class="answer" id="answer-css-2-4">millimeters</div>
-        </div>
-      </div>
-      <div class="hide" id="answer-css-3">
-        <h1 id="question-css-3">How would you select: Every a element whose href attribute value contains the substring “css”</h1>
-        <div class="answers">
-          <div class="answer" id="answer-css-3-1">a[href^="https"]</div>
-          <div class="answer" id="answer-css-3-2">a[href$=".pdf"]</div>
-          <div class="answer" id="answer-css-3-3">a[href*="css"]</div> 
-          <div class="answer" id="answer-css-3-4">a[href=*"css"]</div>
-        </div>
-      </div>
-    </section>
-    <!-- Win View -->
-    <section class="hide" id="win-view">
-      <h1>You Won!</h1>
-    </section>
-    <!-- Lose View -->
-    <section class="hide" id="lose-view">
-      <h1>Sorry, you lose, please study more!</h1>
-    </section>
-    <button id="play-again" class="hide">Play Again</button>
-  </div>
-  <script src="main.js"></script>
-</body>
-
+    <script src="main.js"></script>
+  </body>
 </html>
