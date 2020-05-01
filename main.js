@@ -108,10 +108,14 @@ const rightAnswer = function(rightBox, currAnswersBox, nextAnswersBox) {
   }
 };
 
-const wrongAnswer = function(wrongBox, rightBox) {
+const wrongAnswer = function(wrongBox, rightBox, currAnswersBox) {
   // paint the right one and the current one
   wrongBox.style.background = "red";
   rightBox.style.background = "green";
+  currAnswersBox.classList.add("hide");
+  currAnswersBox.classList.remove("card-question");
+  loseView.classList.remove("hide");
+  playAgain.classList.remove("hide");
 };
 
 loginBtn.addEventListener("click", login);
@@ -123,81 +127,81 @@ playCSS.addEventListener("click", function() {
 });
 
 answerJS11.addEventListener("click", function() {
-  wrongAnswer(answerJS11, answerJS12);
+  wrongAnswer(answerJS11, answerJS12, answersBoxJS1);
 });
 answerJS12.addEventListener("click", function() {
   rightAnswer(answerJS12, answersBoxJS1, answersBoxJS2);
 });
 answerJS13.addEventListener("click", function() {
-  wrongAnswer(answerJS13, answerJS12);
+  wrongAnswer(answerJS13, answerJS12, answersBoxJS1);
 });
 answerJS14.addEventListener("click", function() {
-  wrongAnswer(answerJS14, answerJS12);
+  wrongAnswer(answerJS14, answerJS12, answersBoxJS1);
 });
 
 answerJS21.addEventListener("click", function() {
   rightAnswer(answerJS21, answersBoxJS2, answersBoxJS3);
 });
 answerJS22.addEventListener("click", function() {
-  wrongAnswer(answerJS22, answerJS21);
+  wrongAnswer(answerJS22, answerJS21, answersBoxJS2);
 });
 answerJS23.addEventListener("click", function() {
-  wrongAnswer(answerJS23, answerJS21);
+  wrongAnswer(answerJS23, answerJS21, answersBoxJS2);
 });
 answerJS24.addEventListener("click", function() {
-  wrongAnswer(answerJS24, answerJS21);
+  wrongAnswer(answerJS24, answerJS21, answersBoxJS2);
 });
 
 answerJS31.addEventListener("click", function() {
-  wrongAnswer(answerJS31, answerJS31);
+  wrongAnswer(answerJS31, answerJS33, answersBoxJS3);
 });
 answerJS32.addEventListener("click", function() {
-  wrongAnswer(answerJS32, answerJS31);
+  wrongAnswer(answerJS32, answerJS33, answersBoxJS3);
 });
 answerJS33.addEventListener("click", function() {
   rightAnswer(answerJS33, answersBoxJS3, "final");
 });
 answerJS34.addEventListener("click", function() {
-  wrongAnswer(answerJS34, answerJS31);
+  wrongAnswer(answerJS34, answerJS33, answersBoxJS3);
 });
 
 answerCSS11.addEventListener("click", function() {
-  wrongAnswer(answerCSS12, answerCSS14);
+  wrongAnswer(answerCSS12, answerCSS14, answersBoxCSS1);
 });
 answerCSS12.addEventListener("click", function() {
-  wrongAnswer(answerCSS12, answerCSS14);
+  wrongAnswer(answerCSS12, answerCSS14, answersBoxCSS1);
 });
 answerCSS13.addEventListener("click", function() {
-  wrongAnswer(answerCSS13, answerCSS14);
+  wrongAnswer(answerCSS13, answerCSS14), answersBoxCSS1;
 });
 answerCSS14.addEventListener("click", function() {
   rightAnswer(answerCSS14, answersBoxCSS1, answersBoxCSS2);
 });
 
 answerCSS21.addEventListener("click", function() {
-  wrongAnswer(answerCSS21, answerCSS22);
+  wrongAnswer(answerCSS21, answerCSS22, answersBoxCSS2);
 });
 answerCSS22.addEventListener("click", function() {
   rightAnswer(answerCSS22, answersBoxCSS2, answersBoxCSS3);
 });
 answerCSS23.addEventListener("click", function() {
-  wrongAnswer(answerCSS23, answerCSS22);
+  wrongAnswer(answerCSS23, answerCSS22, answersBoxCSS2);
 });
 answerCSS24.addEventListener("click", function() {
-  wrongAnswer(answerCSS24, answerCSS22);
+  wrongAnswer(answerCSS24, answerCSS22, answersBoxCSS2);
 });
 
 answerCSS31.addEventListener("click", function() {
-  wrongAnswer(answerCSS31, answerCSS33);
+  wrongAnswer(answerCSS31, answerCSS33, answersBoxCSS3);
 });
 answerCSS32.addEventListener("click", function() {
-  wrongAnswer(answerCSS32, answerCSS33);
+  wrongAnswer(answerCSS32, answerCSS33, answersBoxCSS3);
 });
 answerCSS33.addEventListener("click", function() {
   rightAnswer(answerCSS33, answersBoxCSS3, "final");
 });
 answerCSS34.addEventListener("click", function() {
-  wrongAnswer(answerCSS34, answerCSS33);
+  wrongAnswer(answerCSS34, answerCSS33, answersBoxCSS3);
 });
 
 playAgain.addEventListener("click", goHomeView);
